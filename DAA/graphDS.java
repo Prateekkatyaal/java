@@ -64,6 +64,16 @@ public class graphDS {
         } 
     }
 
+    void connectedComponents(){
+        boolean visited[] = new boolean[V];
+        for(int v = 0; v < V; v++){
+            if(!visited[v]){
+                dfsUtil(v, visited);
+                System.out.println();
+            }
+        }
+    }
+
     public static void main(String[] args) {
         graphDS g = new graphDS(4);
 
