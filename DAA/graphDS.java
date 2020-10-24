@@ -1,7 +1,6 @@
 package DAA;
 
-import java.util.Iterator;
-import java.util.LinkedList;
+import java.util.*;
 
 public class graphDS {
     private int V;
@@ -73,6 +72,35 @@ public class graphDS {
             }
         }
     }
+
+    void topologicalSortUtil(int v, boolean visited[], Stack<Integer> stack){ 
+        visited[v] = true; 
+        Integer i; 
+  
+        Iterator<Integer> it = adj[v].iterator(); 
+        while (it.hasNext()) { 
+            i = it.next(); 
+            if (!visited[i]) 
+                topologicalSortUtil(i, visited, stack); 
+        }
+        stack.push(new Integer(v)); 
+    } 
+
+    void topologicalSort() 
+    { 
+        Stack<Integer> stack = new Stack<Integer>(); 
+  
+        boolean visited[] = new boolean[V]; 
+        for (int i = 0; i < V; i++) 
+            visited[i] = false; 
+  
+        for (int i = 0; i < V; i++) 
+            if (visited[i] == false) 
+                topologicalSortUtil(i, visited, stack); 
+  
+        while (stack.empty() == false) 
+            System.out.print(stack.pop() + " "); 
+    } 
 
     public static void main(String[] args) {
         graphDS g = new graphDS(4);
