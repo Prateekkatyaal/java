@@ -82,6 +82,6 @@ public class BellmanFord {
         graph.edge[4].w = 2;
 
         graph.BFAlgo(graph, 0);
-        
+
     }
 }
