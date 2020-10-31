@@ -25,6 +25,7 @@ public class mergeIntervals {
             }
             i++;
         }
+        list.add(in);
         return list.toArray(new int[list.size()][]);
         
     }
