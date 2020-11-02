@@ -1,2 +1,2 @@
 # java
-The java questions from LeetCode and HackerRank
+The Java Data Structures and Algorithms questions
